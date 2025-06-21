@@ -211,7 +211,7 @@ function SelectedMovie({ selectedId, onCloseMovie, onAddWatched, watched }) {
     async function getSelectedMovie() {
       try {
         setIsLoading(true);
-        const req = await fetch(`http://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`);
+        const req = await fetch(`https://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`);
         if (!req.ok) throw new Error('Something went wrong with fetching movie');
         const res = await req.json();
         setMovie(res);
